@@ -1,9 +1,45 @@
 var questions = ["How are Placements", "How many Canteens are there?", "Which canteen is the best", "Where can i get my id Card", "which is the mechanical department"];
 var debates = ["Covid", "Hijab Row", "Vaccination", "Online classes", "Hostel food", "F1"];
-var qList = document.getElementById("qList");
+var qList1 = document.getElementById("v-pills-latest");
+var qList2 = document.getElementById("v-pills-mostviewed");
+var qList3 = document.getElementById("v-pills-teachers");
+var qList4 = document.getElementById("v-pills-students");
+var qList5 = document.getElementById("v-pills-seniors");
+let q2 = questions
+  .map(value => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value)
+let q3 = q2
+  .map(value => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value)
+
+let q4 = q3
+  .map(value => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value)
+
+let q5 = q4
+  .map(value => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value)
+
+
 
 questions.forEach((item) =>{
-    qList.innerHTML += "<a style=\"text-decoration:none;color: inherit;\" href='/question/"+item+"'><div class=\"cardQ mb-2 border\"><div class=\"card-body \"><h5 class=\"card-title\">"+item+"</h5><h6 class=\"card-subtitle\">Tags : Placements, Teachers, Seniors</h6><p class=\"card-text\">I am a 2nd year student in the ME department and wanted to know how and when the placements are conducted in our college</p></div></div></a>";
+    qList1.innerHTML += "<a style=\"text-decoration:none;color: inherit;\" href='/question/"+item+"'><div class=\"cardQ mb-2 border\"><div class=\"card-body \"><h5 class=\"card-title\">"+item+"</h5><h6 class=\"card-subtitle\">Tags : Placements, Teachers, Seniors</h6><p class=\"card-text\">I am a 2nd year student in the ME department and wanted to know how and when the placements are conducted in our college</p></div></div></a>";
+});
+q2.forEach((item) =>{
+  qList2.innerHTML += "<a style=\"text-decoration:none;color: inherit;\" href='/question/"+item+"'><div class=\"cardQ mb-2 border\"><div class=\"card-body \"><h5 class=\"card-title\">"+item+"</h5><h6 class=\"card-subtitle\">Tags : Placements, Teachers, Seniors</h6><p class=\"card-text\">I am a 2nd year student in the ME department and wanted to know how and when the placements are conducted in our college</p></div></div></a>";
+});
+q3.forEach((item) =>{
+  qList3.innerHTML += "<a style=\"text-decoration:none;color: inherit;\" href='/question/"+item+"'><div class=\"cardQ mb-2 border\"><div class=\"card-body \"><h5 class=\"card-title\">"+item+"</h5><h6 class=\"card-subtitle\">Tags : Placements, Teachers, Seniors</h6><p class=\"card-text\">I am a 2nd year student in the ME department and wanted to know how and when the placements are conducted in our college</p></div></div></a>";
+});
+q4.forEach((item) =>{
+  qList4.innerHTML += "<a style=\"text-decoration:none;color: inherit;\" href='/question/"+item+"'><div class=\"cardQ mb-2 border\"><div class=\"card-body \"><h5 class=\"card-title\">"+item+"</h5><h6 class=\"card-subtitle\">Tags : Placements, Teachers, Seniors</h6><p class=\"card-text\">I am a 2nd year student in the ME department and wanted to know how and when the placements are conducted in our college</p></div></div></a>";
+});
+q5.forEach((item) =>{
+  qList5.innerHTML += "<a style=\"text-decoration:none;color: inherit;\" href='/question/"+item+"'><div class=\"cardQ mb-2 border\"><div class=\"card-body \"><h5 class=\"card-title\">"+item+"</h5><h6 class=\"card-subtitle\">Tags : Placements, Teachers, Seniors</h6><p class=\"card-text\">I am a 2nd year student in the ME department and wanted to know how and when the placements are conducted in our college</p></div></div></a>";
 });
 
 
@@ -11,6 +47,47 @@ var debateList = document.getElementById("debateList");
 debates.forEach((item) => {
     debateList.innerHTML += "<a href=\"/debate/"+item+"\" class=\"list-group-item list-group-item-action text-center debateItem\">"+item+"</a>";
 })
+
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
+
+openModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = document.querySelector(button.dataset.modalTarget)
+    openModal(modal)
+  })
+})
+
+overlay.addEventListener('click', () => {
+  const modals = document.querySelectorAll('#modal.active')
+  modals.forEach(modal => {
+    closeModal(modal)
+  })
+})
+
+closeModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = button.closest('#modal')
+    closeModal(modal)
+  })
+})
+
+function openModal(modal) {
+  if (modal == null) return
+  modal.classList.add('active')
+  overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+  if (modal == null) return
+  modal.classList.remove('active')
+  overlay.classList.remove('active')
+}
+
+function show_Message(){
+    alert("Quetion has been successfully submited!");
+}
 
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
