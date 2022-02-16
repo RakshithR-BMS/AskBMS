@@ -3,13 +3,13 @@ var debates = ["Covid", "Hijab Row", "Vaccination", "Online classes", "Hostel fo
 var qList = document.getElementById("qList");
 
 questions.forEach((item) =>{
-    qList.innerHTML += "<div class=\"cardQ mb-2 border\"><div class=\"card-body \"><h5 class=\"card-title\">"+item+"</h5><h6 class=\"card-subtitle\">Tags : Placements, Teachers, Seniors</h6><p class=\"card-text\">I am a 2nd year student in the ME department and wanted to know how and when the placements are conducted in our college</p></div></div>";
+    qList.innerHTML += "<a style=\"text-decoration:none;color: inherit;\" href='/question/"+item+"'><div class=\"cardQ mb-2 border\"><div class=\"card-body \"><h5 class=\"card-title\">"+item+"</h5><h6 class=\"card-subtitle\">Tags : Placements, Teachers, Seniors</h6><p class=\"card-text\">I am a 2nd year student in the ME department and wanted to know how and when the placements are conducted in our college</p></div></div></a>";
 });
 
 
 var debateList = document.getElementById("debateList");
 debates.forEach((item) => {
-    debateList.innerHTML += "<a href=\"#\" class=\"list-group-item list-group-item-action text-center debateItem\">"+item+"</a>";
+    debateList.innerHTML += "<a href=\"/debate/"+item+"\" class=\"list-group-item list-group-item-action text-center debateItem\">"+item+"</a>";
 })
 
 function autocomplete(inp, arr) {
