@@ -79,3 +79,9 @@ input[type=submit] {
 
 /* this is debate css */
 
+.debody{
+    background-size: cover;
+    
+    background-image: url("/images/bms-image.jpg");
+    
+}

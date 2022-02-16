@@ -22,10 +22,10 @@ input.addEventListener("keyup", (event)=>{
             var inner = chatbox.innerHTML
             input.value = ""
             if(stat == 0){
-                chatbox.innerHTML = "<div class='argument' style='word-wrap: break-word;margin: 2px;padding: 7px;border-radius: 10px;background-color: green;'><p>"+mess+"</p></div>"+inner
+                chatbox.innerHTML = "<div class='argument' style='color: white;word-wrap: break-word;margin: 2px;padding: 7px;border-radius: 10px;background-color: green; opacity: 0.7;'><p>"+mess+"</p></div>"+inner
             }
             else if(stat == 1){
-                chatbox.innerHTML = "<div class='argument' style='word-wrap: break-word;margin: 2px;padding: 5px;border-radius: 10px;background-color: tomato;'><p>"+mess+"</p></div>"+inner
+                chatbox.innerHTML = "<div class='argument' style='color: white;word-wrap: break-word;margin: 2px;padding: 5px;border-radius: 10px;background-color: tomato;opacity: 0.7;'><p>"+mess+"</p></div>"+inner
             }
         }
         else{
