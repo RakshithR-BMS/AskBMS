@@ -92,7 +92,8 @@ input[type=submit] {
 
 .debody{
     
-    background-image: url("/images/y-so-serious.png");
+    background-image: url("/images/bms-image.jpg");
+    background-size: cover;
     
 }
 
