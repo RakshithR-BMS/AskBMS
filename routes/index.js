@@ -10,7 +10,7 @@ var answers = {"Sai Kumar(HOD@ME)": "Placements are conducted for the 3rd and 4t
 }
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.sendFile(path.resolve("./views/register.html"))  
+  res.sendFile(path.resolve("./views/logreg.html"))  
 });
 router.get('/home', function(req, res, next) {
   res.sendFile(path.resolve("./views/home.html"))  
@@ -25,6 +25,26 @@ router.get('/register', function(req, res, next) {
 
 router.get('/qs/:name', function(req, res, next) {
   res.sendFile(path.resolve("./views/question.html"))
+});
+
+router.get('/login/admin', function(req, res, next) {
+  res.sendFile(path.resolve("./views/login3.html"))
+});
+router.get('/login/teacher', function(req, res, next) {
+  res.sendFile(path.resolve("./views/login2.html"))
+});
+router.get('/login/student', function(req, res, next) {
+  res.sendFile(path.resolve("./views/login1.html"))
+});
+
+router.get('/register/admin', function(req, res, next) {
+  res.sendFile(path.resolve("./views/register3.html"))
+});
+router.get('/register/teacher', function(req, res, next) {
+  res.sendFile(path.resolve("./views/register2.html"))
+});
+router.get('/register/student', function(req, res, next) {
+  res.sendFile(path.resolve("./views/register1.html"))
 });
 
 router.get('/question/:qName', function(req, res, next) {
