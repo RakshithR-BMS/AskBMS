@@ -6,10 +6,10 @@
     
 }
 
-/* body{
-    background-image: url('/images/bms-image.jpg');
+body{
+    background-image: url('/images/bms2.jpg');
     background-size: cover;
-} */
+}
 
 
 .ask{
@@ -18,8 +18,8 @@
 }
 
 .ask h1{
-    font-size: 90px;
-    margin: 30px;
+    font-size: 105px;
+    margin: 50px;
     
 }
 
@@ -34,6 +34,7 @@ p{
     border-radius: 20px;
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    opacity: 0.9;
     
 
 }
@@ -63,6 +64,7 @@ p{
     padding: 10px;
     background: transparent;
     
+    
 }
 
 .size a{
@@ -73,6 +75,7 @@ p{
 
 .size1{
     font-size: medium;
+    color: white;
 }
 
  a:hover{
