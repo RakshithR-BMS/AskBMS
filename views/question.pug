@@ -14,10 +14,13 @@ body.homebody
         img(style='width: 50px;' src='/images/logo-bms.png')
       a.navbar-brand(href='/home' style="color: white;")
         h2 AskBMS
+      
       button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
         span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav.ms-auto(style='width: max-content;')
+          li.nav-item
+            a.nav-link.active(aria-current='page' href='https://www.bmsce.ac.in/' style="color: white; text-decoration: underline;") Go to College site
           li.nav-item
             a.nav-link.active(aria-current='page' href='/home' style="color: white;") Home
           li.nav-item.dropdown
@@ -49,7 +52,12 @@ body.homebody
               p I am a 2nd year student in the ME department and wanted to know how and when the placements are conducted in our college
               p(style='color: grey; font-size: 14px;' ) Posted by : 
                   a(href='/u/suraj' style='color: grey;') Suraj(1BM20CS079)  
-                  | on 11/12/2021 
+                  | on 11/12/2021
+          .card(style='padding: 20px')
+                  p Answer this question
+                  textarea#answer(name="answer", rows="3" placeholder="Type your answer") 
+                  div.gap-2(style='display: flex;height: 40px; margin: 10px')
+                      button.btn.btn-dark.ms-auto(type="button" ) Post
       
           h5(style='margin: 20px;') 5 Answers 
           each key,val in answers
