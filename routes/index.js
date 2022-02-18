@@ -46,6 +46,9 @@ router.get('/register/teacher', function(req, res, next) {
 router.get('/register/student', function(req, res, next) {
   res.sendFile(path.resolve("./views/register1.html"))
 });
+router.get('/login/forgotpassword', function(req, res, next) {
+  res.sendFile(path.resolve("./views/forgotpassword.html"))
+});
 
 router.get('/question/:qName', function(req, res, next) {
   
