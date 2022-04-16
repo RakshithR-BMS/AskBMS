@@ -15,6 +15,9 @@ router.get('/', function(req, res, next) {
 router.get('/home', function(req, res, next) {
   res.sendFile(path.resolve("./views/home.html"))  
 });
+router.get('/admin', function(req, res, next) {
+  res.sendFile(path.resolve("./views/admin.html"))  
+});
 router.get('/profile', function(req, res, next) {
   res.sendFile(path.resolve("./views/profile.html"))
 });

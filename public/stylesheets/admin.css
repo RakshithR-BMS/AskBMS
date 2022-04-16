@@ -1,0 +1,26 @@
+body{
+    background-image: url("/images/y-so-serious-white.png");
+}
+
+.reports{
+    margin: 15px;
+    /* border: 0.5px grey solid; */
+    
+    padding: 10px;
+    border-radius: 15px;
+    
+}
+.category{
+    width: max-content;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.content{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+button{
+    margin: 5px;
+}
