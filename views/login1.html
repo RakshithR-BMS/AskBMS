@@ -7,8 +7,8 @@
         <link rel="stylesheet" href="/stylesheets/validation.css">
         <title>login</title></head>
 <body>
+    <h1 class="ask">AskBMS</h1>
     <div class="login-page">
-        <h1 class="ask">AskBMS</h1>
         <div class="form-box">
             
             <div class="button-box">
@@ -17,9 +17,9 @@
 
                     <div>
                         
-                        <form id="login" class="login-data" action="/home">
-                            <input type="text" class="input-data" placeholder="USN" required>
-                            <input type="password" class="input-data" placeholder="Password" required>
+                        <form id="login" class="login-data" action="/home" method="post" name="login" onsubmit="return validateForm()">
+                            <input type="text" class="input-data" placeholder="USN" required name="usn">
+                            <input type="password" class="input-data" placeholder="Password" required name="password">
                             <p class="forgot"><a href="/login/forgotpassword">Forgot Password</a></p>
                            
                             <button type="submit" class="submit-button">Login</button>
@@ -31,35 +31,19 @@
             </div>
         </div>
 
-                    <form id="form">
-                    <div>
-                        <label for="username">User Name</label>
-                        <i class="fas fa-user"></i>
-                        <input type="text" name="username" id="username" placeholder="Joy Shaheb" />
-                        <i class="fas fa-exclamation-circle failure-icon"></i>
-                        <i class="far fa-check-circle success-icon"></i>
-                        <div class="error"></div>
-                      </div>
-                      <div>
-                        <label for="email">Email</label>
-                        <i class="far fa-envelope"></i>
-                        <input type="email" name="email" id="email" placeholder="abc@gmail.com" />
-                        <i class="fas fa-exclamation-circle failure-icon"></i>
-                        <i class="far fa-check-circle success-icon"></i>
-                        <div class="error"></div>
-                      </div>
-                      <div>
-                        <label for="password">Password</label>
-                        <i class="fas fa-lock"></i>
-                        <input type="password" name="password" id="password" placeholder="Password here" />
-                        <i class="fas fa-exclamation-circle failure-icon"></i>
-                        <i class="far fa-check-circle success-icon"></i>
-                        <div class="error"></div>
-                      </div>
-                  
-                      <button type="submit" id="submit">Submit</button>
-                    </form>
-            
-    <script src="javascripts/validation.ja"></script>
+    <script >
+        function validateForm() {
+  let usn = document.forms["login"]["usn"].value;
+  let pass = document.forms["login"]["password"].value;
+  if (usn.slice(0,3) != "1BM") {
+    alert("USN must be of the proper format(1BM_______)");
+    return false;
+  }
+  if(usn != "1BM20CS100" && pass != "bmsce"){
+    alert("Invalid Credentials");
+    return false;
+  }
+}
+    </script>
 </body>
 </html>

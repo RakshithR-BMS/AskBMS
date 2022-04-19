@@ -6,8 +6,9 @@
         <link rel="stylesheet" href="/stylesheets/login1.css">
         <title>login</title></head>
 <body>
+    <h1 class="ask">AskBMS</h1>
     <div class="login-page">
-        <h1 class="ask">AskBMS</h1>
+        
         <div class="form-box">
             
             <div class="button-box">
@@ -16,9 +17,9 @@
 
                     <div>
                         
-                        <form id="login" class="login-data" action="/home">
-                            <input type="text" class="input-data" placeholder="Teacher id" required>
-                            <input type="password" class="input-data" placeholder="Password" required>
+                        <form id="login" class="login-data" action="/home" method="post" name="login" onsubmit="return validateForm()">
+                            <input type="text" class="input-data" placeholder="Teacher id" required name="tid">
+                            <input type="password" class="input-data" placeholder="Password" required name="password">
                             <p class="forgot"><a href="/login/forgotpassword">Forgot Password</a></p>
                            
                             <button type="submit" class="submit-button">Login</button>
@@ -30,5 +31,19 @@
 
         </div>
     </div>
+    <script >
+        function validateForm() {
+  let tid = document.forms["login"]["tid"].value;
+  let pass = document.forms["login"]["password"].value;
+  if (tid.slice(0,4) != "1BMT") {
+    alert("Teacher ID must be of the proper format");
+    return false;
+  }
+  if(tid != "1BMT20CS100" && pass != "bmsce"){
+    alert("Invalid Credentials");
+    return false;
+  }
+}
+    </script>
 </body>
 </html>

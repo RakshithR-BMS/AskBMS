@@ -12,9 +12,17 @@ var answers = {"Sai Kumar(HOD@ME)": "Placements are conducted for the 3rd and 4t
 router.get('/', function(req, res, next) {
   res.sendFile(path.resolve("./views/logreg.html"))  
 });
+router.post('/', function(req, res) {
+  res.sendFile(path.resolve("./views/logreg.html"))  
+});
 router.get('/home', function(req, res, next) {
   res.sendFile(path.resolve("./views/home.html"))  
 });
+
+router.post('/home', (req, res) => {
+  res.sendFile(path.resolve("./views/home.html"))  
+});
+
 router.get('/admin', function(req, res, next) {
   res.sendFile(path.resolve("./views/admin.html"))  
 });

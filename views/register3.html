@@ -6,9 +6,7 @@
         <link rel="stylesheet" href="/stylesheets/register1.css">
         <title>Register</title></head>
 <body>
-    <div class="ask">
-        <h1>AskBMS</h1>
-    </div>
+    <h1 class="ask">AskBMS</h1>
     <div class="register-page">
         <div class="form-box">
             
@@ -18,12 +16,12 @@
                                
 
                     <div>
-                        <form id="register" class="register-data" action="/">
-                            <input type="text" class="input-data" placeholder="Admin id" required>
-                            <input type="email" class="input-data" placeholder="College Mail id" required>
-                            <input type="password" class="input-data" placeholder="Password" required>
-                            <input type="password" class="input-data" placeholder="Confirm Password" required>
-                            <input type="checkbox" class="check-box" ><span> I agree to the terms and conditions</span> 
+                        <form id="register" class="register-data" action="/" method="post" name="register" onsubmit="return validateForm()">
+                            <input type="text" class="input-data" placeholder="Admin id" required name="aid">
+                            <input type="email" class="input-data" placeholder="College Mail id" required name="email">
+                            <input type="password" class="input-data" placeholder="Password" required name="password">
+                            <input type="password" class="input-data" placeholder="Confirm Password" required name="cPassword">
+                            <input type="checkbox" class="check-box" name="check"><span> I agree to the terms and conditions</span> 
                             <button type="submit" class="submit-button">Register</button>                  
     
                         </form>
@@ -34,5 +32,34 @@
 
         </div>
     </div>
+    <script >
+        function validateForm() {
+  let usn = document.forms["register"]["aid"].value;
+  let email = document.forms["register"]["email"].value;
+  let pass = document.forms["register"]["password"].value;
+  let cpass = document.forms["register"]["cPassword"].value;
+  let check = document.forms["register"]["check"].checked;
+  if (usn.slice(0,4) != "1BMA") {
+    alert("Teacher ID must be of the proper format");
+    return false;
+  }
+  if(!email.includes("bmsce.ac.in")){
+    alert("Please use college email id");
+      return false;
+  }
+  if(pass.length < 4){
+      alert("Password must be at least 4 characters");
+      return false;
+  }
+  if(pass != cpass){
+      alert("Passwords do not match");
+      return false;
+  }
+  if(check != true){
+    alert("Please accept the terms");
+    return false;
+  }
+}
+    </script>
 </body>
 </html>
